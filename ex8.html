@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Fibonacci até N termos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+    }
+    #resultado {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Fibonacci até N termos</h1>
+  <input type="text" id="num" placeholder="Digite um número" />
+  <button onclick="contar()">Contar</button>
+
+  <div id="resultado"></div>
+
+  <script>
+    function contar() {
+      const num = parseInt(document.getElementById("num").value);
+      const resultado = document.getElementById("resultado");
+
+    let termo_anterior=0, termo_atual=1;
+    let sequencia = [];
+
+      if (isNaN(num)) {
+        resultado.textContent = "Por favor, digite uma informação válida";
+        return;
+      }
+
+       for (let i=0; i<num; i++) {
+        sequencia.push(termo_anterior);
+        let proximo = termo_anterior + termo_atual;
+        termo_anterior = termo_atual;
+        termo_atual = proximo;
+      }
+
+      resultado.textContent = sequencia.join(" ");
+    }
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Tabuada</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+    }
+    #resultado {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      white-space: pre-line;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Tabuada de um Número</h1>
+  <input type="number" id="numero" placeholder="Digite um número" />
+  <button onclick="mostrarTabuada()">Ver Tabuada</button>
+
+  <div id="resultado"></div>
+
+  <script>
+    function mostrarTabuada() {
+      const num = parseInt(document.getElementById("numero").value);
+      const resultado = document.getElementById("resultado");
+
+      if (isNaN(num)) {
+        resultado.textContent = "Por favor, digite um número válido.";
+        return;
+      }
+
+      let tabuada = "";
+      for (let i=1; i<=10; i++) {
+        tabuada += `${num} x ${i} = ${num * i}\n\n`;
+      }
+
+      resultado.textContent = tabuada;
+    }
+  </script>
+
+</body>
+</html>

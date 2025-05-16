@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Somar números até o usuário digitar 0</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+    }
+    #resultado {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Somar números até o usuário digitar 0</h1>
+  <input type="text" id="numero" placeholder="Digite um número" />
+  <button onclick="somar()">Somar</button>
+
+  <div id="resultado"></div>
+
+  <script>
+    let soma = 0
+
+    function somar() {
+      const num = parseInt(document.getElementById("numero").value);
+      const resultado = document.getElementById("resultado");
+
+      if (isNaN(num)) {
+        resultado.textContent = "Por favor, digite uma informação válida";
+        return;
+      }
+
+      if (num == 0){
+      resultado.textContent = "FIM"
+    }
+      else {
+      soma += num;
+      resultado.textContent = `A soma está em: ${soma}`;
+    }
+}
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Contar de 1 até 100 (ou até N)</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+    }
+    #resultado {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Contar de 1 até 100 (ou até N)</h1>
+  <input type="text" id="numero" placeholder="Digite um número" />
+  <button onclick="contar()">Contar</button>
+
+  <div id="resultado"></div>
+
+  <script>
+    function contar() {
+      const num = parseInt(document.getElementById("numero").value);
+      const resultado = document.getElementById("resultado");
+
+      if (isNaN(num)) {
+        resultado.textContent = "Por favor, digite uma informação válida";
+        return;
+      }
+
+      for (let i=1; i<=num; i++) {
+        resultado.textContent += `${i}\n`;
+      }
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Verificar se um número é primo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+    }
+    #resultado {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Verificar se um número é primo</h1>
+  <input type="text" id="num" placeholder="Digite um número" />
+  <button onclick="verificar()">Verificar</button>
+
+  <div id="resultado"></div>
+
+  <script>
+    function verificar() {
+      const num = parseInt(document.getElementById("num").value);
+      const resultado = document.getElementById("resultado");
+
+      if (isNaN(num)) {
+        resultado.textContent = "Por favor, digite uma informação válida";
+        return;
+      }
+
+      if (num == 2 || num == 3) {
+        resultado.textContent = "É primo"
+        return;
+      }
+
+      if (num <= 1){
+        resultado.textContent = "Não é primo"
+        return;
+      }
+
+      for (let i=2; i<=Math.sqrt(num); i++) {
+            if (num % i == 0) {
+                resultado.textContent = "Não é primo"
+                return;
+            }
+            else
+            resultado.textContent = "É primo";}
+    }
+
+  </script>
+
+</body>
+</html>
